@@ -39,6 +39,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
+
 app.use("/api", require("./routes/landingRoutes"))
 
 app.use("/api/teams", require("./routes/teamRoutes"));
